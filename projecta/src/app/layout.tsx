@@ -1,10 +1,14 @@
 // app/layout.tsx
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import { Flex, Box } from '@chakra-ui/react';
 import { Providers } from './providers';
 import Sidebar from './components/Sidebar';
 import ChatBox from './components/ChatBox'; // Import your ChatBox component with correct casing
+import FoodUI from './components/FoodUI'; // Example additional component
+
+
+
 
 export default function RootLayout({
   children,
