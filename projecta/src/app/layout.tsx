@@ -4,7 +4,7 @@ import React from 'react';
 import { Flex, Box } from '@chakra-ui/react';
 import { Providers } from './providers';
 import Sidebar from './components/Sidebar';
-import ChatBox from './components/Chatbox'; // Import your ChatBox component
+import ChatBox from './components/ChatBox'; // Import your ChatBox component with correct casing
 
 export default function RootLayout({
   children,
