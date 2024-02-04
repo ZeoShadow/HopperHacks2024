@@ -8,20 +8,21 @@ import ChatBox from './components/ChatBox'; // Import your ChatBox component wit
 import FoodUI from './components/FoodUI'; // Example additional component
 
 
-
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [activeUI, setActiveUI] = useState('chatbot'); // State to control active UI
+
   return (
     <html lang='en'>
       <body>
         <Flex h="100vh">
-          <Sidebar /> {/* Sidebar component, assuming it handles its own width */}
+          <Sidebar setActiveUI={setActiveUI} /> {/* Pass setActiveUI as prop */}
           <Flex flex="1" justifyContent="center" alignItems="center">
-            <ChatBox /> {/* ChatBox in the center */}
+            {activeUI === 'chatbot' && <ChatBox />}
+            {activeUI === 'food' && <FoodUI />}
           </Flex>
         </Flex>
         <Providers>{children}</Providers>
