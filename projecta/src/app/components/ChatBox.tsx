@@ -1,6 +1,9 @@
+'use client'
 import React, { useState } from "react";
 import { Box, Input, Button, VStack, HStack, Text, Flex,  InputGroup, InputRightElement, } from "@chakra-ui/react";
 import { IoIosSend } from "react-icons/io";
+import dynamic from "next/dynamic";
+
 
 interface Message {
   id: number;
@@ -66,5 +69,7 @@ const Chatbox = () => {
       </Flex>
     );
   };
-  
-export default Chatbox;
+
+// export default Chatbox;
+
+export default dynamic (() => Promise.resolve(Chatbox), {ssr: false})

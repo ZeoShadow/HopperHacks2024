@@ -1,6 +1,9 @@
+'use client'
 import { Box, Flex, Text, VStack, Link, Icon, Spacer, Divider } from '@chakra-ui/react';
 import { FiHome, FiUser, FiSettings } from 'react-icons/fi';
 import { IoFastFoodSharp, IoChatboxEllipsesOutline } from "react-icons/io5";
+import dynamic from "next/dynamic";
+
 const
  Sidebar = () => {
   return (
@@ -35,4 +38,5 @@ const
   );
 };
 
-export default Sidebar;
+// export default Sidebar;
+export default dynamic (() => Promise.resolve(Sidebar), {ssr: false})
